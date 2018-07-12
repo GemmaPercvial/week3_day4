@@ -1,0 +1,20 @@
+require_relative("models/movie")
+require_relative("models/star")
+require_relative("models/casting")
+
+movie1 = Movie.new({'title' => 'Pulp Fiuction', 'genre' => 'Si-Fi'})
+movie2 = Movie.new({'title' => 'Kill Bill', 'genre' => 'action'})
+movie1.save()
+movie2.save()
+
+star1 = Star.new({'first_name' => 'Samuel', 'last_name' => 'Jackson'})
+star2 = Star.new({'first_name' => 'Uma', 'last_name' => 'Therman'})
+star1.save()
+star2.save()
+
+casting1 = Casting.new({'movie_id' => movie1.id, 'star_id' => star1.id, 'fee' => '400'})
+casting2 = Casting.new({'movie_id' => movie1.id, 'star_id' => star2.id, 'fee' => '200'})
+casting3 = Casting.new({'movie_id' => movie2.id, 'star_id' => star2.id, 'fee' => '550'})
+casting1.save()
+casting2.save()
+casting3.save()
